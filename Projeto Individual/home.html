@@ -20,34 +20,37 @@
       <a href="cadastro.html">NewsLetter</a>&nbsp;|&nbsp;&nbsp;&nbsp;
       <a href="faleConosco.html">Opiniões</a>&nbsp;|&nbsp;&nbsp;&nbsp;
       <a href="sobreNos.html">Cadastro</a>&nbsp;|&nbsp;&nbsp;&nbsp;
-      <a>
-        <button class="button03" id="abrir">Gastrônomias</button><br>
-        <div id="modal_container" class="modal_container">
-          <div class="modal">
-            <p>
-              <select class="select" id="sel_tipoDeVinho" onchange="location = this.value;">
-                <option value="culinariaJaponesa.html">Gastrônomia Japonesa</option>
-                <option value="culinariaMediterrânea.html">Gastrônomia Mediterrânea</option>
-                <option value="culinariaLatina.html">Gastrônomia Latina</option>
-                <option value="culinariaArabe.html">Gastrônomia Árabe</option>
-                <option value="culinariaFrancesa.html">Gastrônomia Frâncesa</option>
-                <option value="culinariaSulAsiatica.html">Gastrônomia Sul-Asiática</option>
-              </select>
-            </p>
-            <button class="button" id="direcionar">
-              Direcionar
-            </button>
-            <button class="button02" id="fechar">X</button>
-          </div>
-        </div>
+      <a onclick="abrirTeste()" id="abrir">
+        Gastrônomias
       </a>
+      <div id="modal_container" class="modal_container">
+        <div class="modal">
+          <p>
+            <select class="select" id="sel_tipoDeVinho" onchange="location = this.value;">
+              <option value="culinariaJaponesa.html">Gastrônomia Japonesa</option>
+              <option value="culinariaMediterrânea.html">Gastrônomia Mediterrânea</option>
+              <option value="culinariaLatina.html">Gastrônomia Latina</option>
+              <option value="culinariaArabe.html">Gastrônomia Árabe</option>
+              <option value="culinariaFrancesa.html">Gastrônomia Frâncesa</option>
+              <option value="culinariaSulAsiatica.html">Gastrônomia Sul-Asiática</option>
+            </select>
+          </p>
+          <button class="button" id="direcionar">
+            Direcionar
+          </button>
+          <button onclick="fecharTeste()" class="button02" id="fechar"> 
+            X
+          </button>
+        </div>
+      </div>
     </nav>
   </header>
 
   <div class="wrapper">
     <main>
       <section class="module parallax imagemHome1">
-        <h1>Cultura & sabores</h1>
+        <h1 class="h1parallax">Cultura & sabores</h1>
+        <h2 class="h2parallax">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci voluptatem aut accusantium, praesentium quisquam, quidem saepe delectus nostrum ipsa sapiente ipsam modi possimus quam.</h2>
       </section>
 
       <section class="module content">
@@ -81,25 +84,30 @@
   const modal_container = document.getElementById('modal_container');
   const fechar = document.getElementById('fechar');
 
-  abrir.addEventListener('click', () => {
-    modal_container.classList.add('show');
-  });
+  // abrir.addEventListener('click', () =>ss
 
-  fechar.addEventListener('click', () => {
-    modal_container.classList.remove('show');
-  });
-</script>
-<script>
+  // fechar.addEventListener('click', () => {
+  //   console.log(modal_container.classList)
+  //   modal_container.classList.remove("show")
+  // });
+  function abrirTeste() {
+    console.log(modal_container.classList)
+    modal_container.classList.add("show")
+  }
+  
+  function fecharTeste() {
+    console.log(modal_container.classList)
+    modal_container.classList.remove("show")
+  }
+
   function simulador() {
     window.location.href = "simulador.html"
   }
-</script>
-<script>
+  
   function sobre() {
     window.location.href = "sobreNos.html"
   }
-</script>
-<script>
+  
   function home() {
     window.location.href = "index.html"
   }

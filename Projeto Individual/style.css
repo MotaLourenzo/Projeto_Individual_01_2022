@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Roboto+Condensed&display=swap');
+
 body {
   margin: 0;
   padding: 0;
@@ -27,9 +29,9 @@ body::-webkit-scrollbar-thumb {
 
 header {
   position: fixed;
-  padding: 10px 0;
-  padding-top: 10px;
-  background-color: #e4e4e4;
+  padding: 5px 0;
+  padding-bottom: 30px;
+  background-color: #e4e4e400;
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -97,6 +99,7 @@ mark {
 }
 
 .menu a {
+  cursor: pointer;
   color: black;
   text-decoration: none;
   font-weight: bold;
@@ -242,6 +245,19 @@ section.module.content {
   background: white;
 }
 
+.h1parallax{
+  font-family: Raleway;
+  margin-right: 465px;
+  margin-top: 100px;
+}
+
+.h2parallax{
+  font-family: Raleway;
+  margin-right: 100px;
+  margin-left: 50px;
+  color: #FFF;
+}
+
 section.module.parallax {
   display: flex;
   flex-direction: column;
@@ -265,14 +281,10 @@ section.module.parallax:after {
   width: 100%;
   position: absolute;
   z-index: 8;
-  background: -moz-linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 40%, #000 100%);
-  background: -o-linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 40%, #000 100%);
-  background: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 40%, #000 100%);
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 40%, #000 100%);
 }
 
 section.module.imagemHome1 {
-  background-image: url("https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  background-image: url("https://offloadmedia.feverup.com/saopaulosecreto.com/wp-content/uploads/2020/10/31043936/Skye-Bar-1024x683.jpg");
 }
 
 section.module.imagemHome2 {
@@ -303,11 +315,6 @@ section.module.parallax h1 {
   z-index: 50;
   text-transform: uppercase;
   transition-duration: 2s;
-}
-
-section.module.parallax h1:hover {
-  color: white;
-  transform: scale(1.05)
 }
 
 .spanNegrito {
@@ -350,8 +357,8 @@ section.module.parallax h1:hover {
 
 footer {
   height: 30px;
-  padding: 35px 0px 20px 0px;
-  padding-bottom: 70px;
+  padding: 15px 0px;
+  padding-bottom: 35px;
   background-color: #a09c9c;
   color: black;
   align-self: auto;
