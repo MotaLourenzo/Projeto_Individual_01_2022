@@ -1,37 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME | LoremIpsum</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" type="imagex/png" href="../assets/imagens//uvasensor.png">
+  <title>HOME | Meo</title>
 </head>
 
 <body>
-    <input type="checkbox" id="active">
-    <label for="active" class="menu-btn"><span></span></label>
-    <label for="active" class="close"></label>
-    <div class="wrapper">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Feedback</a></li>
-        </ul>
+
+  <header>
+      
+    <img src="../assets/imagens//logo.png" style="height: 80px; width: 90px;" class="logo" alt="logo" onclick="home()">
+    <nav class="menu">
+      <a href="index.html">Home</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="cadastro.html">NewsLetter</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="faleConosco.html">Opiniões</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="sobreNos.html">Cadastro</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a>
+        <button class="button03" id="abrir">Gastrônomias</button><br>
+        <div id="modal_container" class="modal_container">
+          <div class="modal">
+            <p>
+              <select class="select" id="sel_tipoDeVinho" onchange="location = this.value;">
+                <option value="culinariaJaponesa.html">Gastrônomia Japonesa</option>
+                <option value="culinariaMediterrânea.html">Gastrônomia Mediterrânea</option>
+                <option value="culinariaLatina.html">Gastrônomia Latina</option>
+                <option value="culinariaArabe.html">Gastrônomia Árabe</option>
+                <option value="culinariaFrancesa.html">Gastrônomia Frâncesa</option>
+                <option value="culinariaSulAsiatica.html">Gastrônomia Sul-Asiática</option>
+              </select>
+            </p>
+            <button class="button" id="direcionar">
+              Direcionar
+            </button>
+            <button class="button02" id="fechar">X</button>
+          </div>
+        </div>
+      </a>
+    </nav>
+  </header>
+
+  <div class="wrapper">
+    <main>
+      <section class="module parallax imagemHome1">
+        <h1>Cultura & sabores</h1>
+      </section>
+
+      <section class="module content">
+        <div class="container">
+          <div class="caixaDeTexto1">
+            <h2>Conheça os nossos serviços</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus dolorem rem libero porro inventore tempore minus dicta repellendus et similique modi nostrum consequuntur aperiam accusamus in aut possimus, pariatur ipsum?<mark>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus dolorem rem libero porro inventore tempore minus dicta repellendus et similique modi nostrum consequuntur aperiam accusamus in aut possimus, pariatur ipsum?</mark> <br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.<mark>Natus dolorem rem libero porro inventore tempore minus dicta repellendus et similique modi nostrum consequuntur aperiam accusamus in aut possimus, pariatur ipsum?</mark></p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus dolorem rem libero porro inventore tempore minus dicta repellendus et similique modi nostrum consequuntur aperiam accusamus in aut possimus, pariatur ipsum?<mark>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus dolorem rem libero porro inventore tempore minus dicta repellendus et similique modi nostrum consequuntur aperiam accusamus in aut possimus, pariatur ipsum?</mark> <br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.<mark>Natus dolorem rem libero porro inventore tempore minus dicta repellendus et similique modi nostrum consequuntur aperiam accusamus in aut possimus, pariatur ipsum?</mark></p>
+            <br><br>
+            <button class="button" onclick="sobre()">Saiba Mais</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <footer>
+    <div class="caixaDeTexto">
+      <p>MEO - Todos os direitos reservados - 2022</p>
     </div>
-    <div class="content">
-        <div class="title">
-            Fullscreen Overlay Navigation Bar</div>
-        <p>
-            (Hamburger Menu-2)
-        </p>
-    </div>
+  </footer>
+  <br>
+
 </body>
 
-
 </html>
+<script>
+  const abrir = document.getElementById('abrir');
+  const modal_container = document.getElementById('modal_container');
+  const fechar = document.getElementById('fechar');
+
+  abrir.addEventListener('click', () => {
+    modal_container.classList.add('show');
+  });
+
+  fechar.addEventListener('click', () => {
+    modal_container.classList.remove('show');
+  });
+</script>
+<script>
+  function simulador() {
+    window.location.href = "simulador.html"
+  }
+</script>
+<script>
+  function sobre() {
+    window.location.href = "sobreNos.html"
+  }
+</script>
+<script>
+  function home() {
+    window.location.href = "index.html"
+  }
+</script>
