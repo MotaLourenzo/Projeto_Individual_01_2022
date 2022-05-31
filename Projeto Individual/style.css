@@ -268,7 +268,7 @@ section.module.content {
 
 .h1parallax{
   font-family: Raleway;
-  margin-right: 48vw;
+  margin-right: 53vw;
   margin-top: 10vh;
   margin-top: -5vh;
   color: #FFF;
@@ -276,9 +276,9 @@ section.module.content {
 
 .h2parallax{
   font-family: Raleway;
-  margin-right: 15vw;
-  margin-left: 35vw;
+  margin-right: 33vw;
   margin-left: 3vw;
+  margin-top: -5vh;
   color: #FFF;
 }
 
