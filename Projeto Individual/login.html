@@ -51,14 +51,14 @@
         <main>
             <div class="fundoGradiante02">
                 <h1 class="h1parallax4" style="color: white;">LOGIN | Meo</h1>
-                <div class="divFormulario" id="div_cadastro" style="height: 250px;">
+                <div class="divFormulario" id="div_cadastro" style="height: 20vh;">
                     <p>
-                        <span class="h1parallax3">Seu E-mail:</span>
+                        <span class="h1parallax3"><mark>Seu E-mail:</mark></span>
                         <br>
                         <input class="input01" id="in_email">
                     </p>
                     <p>
-                        <span class="h1parallax3">Sua Senha:</span>
+                        <span class="h1parallax3"><mark>Sua Senha:</mark></span>
                         <br>
                         <input class="input01" type="password" id="in_senha">
                     </p>
@@ -73,6 +73,7 @@
 
 </html>
 <script>
+    
     function Acesso() {
         var email = i_email.value
         var Pass = Number(i_senha.value)
@@ -84,4 +85,19 @@
             alert('FALHA NA AUTENTICAÇÃO, VERIFICAR E-MAIL E SENHA!')
         }
     }
+
+    const abrir = document.getElementById('abrir');
+    const modal_container = document.getElementById('modal_container');
+    const fechar = document.getElementById('fechar');
+
+    function abrirTeste() {
+        console.log(modal_container.classList)
+        modal_container.classList.add("show")
+    }
+
+    function fecharTeste() {
+        console.log(modal_container.classList)
+        modal_container.classList.remove("show")
+    }
+
 </script>

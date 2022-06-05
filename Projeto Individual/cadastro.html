@@ -127,4 +127,18 @@
         return false;
     }
 
+    const abrir = document.getElementById('abrir');
+    const modal_container = document.getElementById('modal_container');
+    const fechar = document.getElementById('fechar');
+
+    function abrirTeste() {
+        console.log(modal_container.classList)
+        modal_container.classList.add("show")
+    }
+
+    function fecharTeste() {
+        console.log(modal_container.classList)
+        modal_container.classList.remove("show")
+    }
+
 </script>
