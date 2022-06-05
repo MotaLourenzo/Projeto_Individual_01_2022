@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" type="imagex/png" href="../assets/imagens//uvasensor.png">
+  <title>NEWSLETTER | Meo</title>
+</head>
+
+<body>
+
+  <header>
+    <img src="../assets/imagens//logo.png" style="height: 80px; width: 90px;" class="logo" alt="logo"
+        onclick="index()">
+    <nav class="menu">
+        <a href="index.html">Home</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+        <a href="newsletter.html">NewsLetter</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+        <a href="votacao.html">Opiniões</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+        <a href="cadastro.html">Cadastro</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+        <a href="login.html">Login</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+        <a onclick="abrirTeste()" id="abrir">
+            Gastrônomias
+        </a>
+        <div id="modal_container" class="modal_container">
+            <div class="modal">
+                <p>
+                    <select class="select" id="sel_tipoDeVinho" onchange="location = this.value;">
+                        <option value="culinariaJaponesa.html">Gastrônomia Japonesa</option>
+                        <option value="culinariaMediterrânea.html">Gastrônomia Mediterrânea</option>
+                        <option value="culinariaLatina.html">Gastrônomia Latina</option>
+                        <option value="culinariaArabe.html">Gastrônomia Árabe</option>
+                        <option value="culinariaFrancesa.html">Gastrônomia Frâncesa</option>
+                        <option value="culinariaSulAsiatica.html">Gastrônomia Sul-Asiática</option>
+                    </select>
+                </p>
+                <button class="button" id="direcionar">
+                    Direcionar
+                </button>
+                <button onclick="fecharTeste()" class="button02" id="fechar">
+                    X
+                </button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+  <div class="wrapper">
+    <main>
+      <section class="module parallax imagemHome2">
+        <h1 class="h1parallax1">Reviews</h1>
+        <h2 class="h2parallax">Com tantas opções, especialistas são nescessários.<br><br>Estamos aqui para isto.</h2>
+      </section>
+
+      <section class="module content">
+        <div class="container">
+          <div class="caixaDeTexto1">
+            <div class="divlogo"><img src="../Projeto Individual/Imagens/teste.png" style="height: 54vh; width: 26vw"></div>
+            <h1 class="h1parallax2">Por que nós?</h1>
+            <h2 class="h2parallax2">
+            <p>A região metropolitana de SP conta com aproximadamente vinte e dois milhões de habitantes, tornando-se a
+              quarta maior região metropolitana do mundo. Essa população, proveniente de centenas de grupos étnicos,
+              torna a inovação cultural parte do seu dia-a-dia, agregando valores e mesclando suas influências.
+              <mark>Com mais de duzentos museus, centros culturais e galerias, além de cerca de 80 mil espaços para
+                alimentação, como restaurantes e bares. Com isso, percebe-se que a atividade cultural da cidade
+                caracteriza-se por ser um dos pilares da mesma.</mark> <br><br>
+              Das dezenas de milhares de restaurantes da região, diversos caracterizam-se por trazerem, além da
+              alimentação de qualidade, experiências inesquecíveis. <mark>Nesse ramo, com a maior população do
+                continente americano, São Paulo necessita de uma ação, partindo de apaixonados por culinária, para
+                apaixonados por culinária.</mark></p></h2>
+            <br><br>
+            <button class="button" onclick="sobre()">Saiba Mais</button>
+          </div>
+        </div>
+        
+        <div class="container">
+          <div class="caixaDeTexto1">
+            <div class="divlogo"><img src="../Projeto Individual/Imagens/teste.png" style="height: 54vh; width: 26vw"></div>
+            <h1 class="h1parallax2">Por que nós?</h1>
+            <h2 class="h2parallax2">
+            <p>A região metropolitana de SP conta com aproximadamente vinte e dois milhões de habitantes, tornando-se a
+              quarta maior região metropolitana do mundo. Essa população, proveniente de centenas de grupos étnicos,
+              torna a inovação cultural parte do seu dia-a-dia, agregando valores e mesclando suas influências.
+              <mark>Com mais de duzentos museus, centros culturais e galerias, além de cerca de 80 mil espaços para
+                alimentação, como restaurantes e bares. Com isso, percebe-se que a atividade cultural da cidade
+                caracteriza-se por ser um dos pilares da mesma.</mark> <br><br>
+              Das dezenas de milhares de restaurantes da região, diversos caracterizam-se por trazerem, além da
+              alimentação de qualidade, experiências inesquecíveis. <mark>Nesse ramo, com a maior população do
+                continente americano, São Paulo necessita de uma ação, partindo de apaixonados por culinária, para
+                apaixonados por culinária.</mark></p></h2>
+            <br><br>
+            <button class="button" onclick="sobre()">Saiba Mais</button>
+          </div>
+        </div>
+        
+        <div class="container">
+          <div class="caixaDeTexto1">
+            <div class="divlogo"><img src="../Projeto Individual/Imagens/teste.png" style="height: 54vh; width: 26vw"></div>
+            <h1 class="h1parallax2">Por que nós?</h1>
+            <h2 class="h2parallax2">
+            <p>A região metropolitana de SP conta com aproximadamente vinte e dois milhões de habitantes, tornando-se a
+              quarta maior região metropolitana do mundo. Essa população, proveniente de centenas de grupos étnicos,
+              torna a inovação cultural parte do seu dia-a-dia, agregando valores e mesclando suas influências.
+              <mark>Com mais de duzentos museus, centros culturais e galerias, além de cerca de 80 mil espaços para
+                alimentação, como restaurantes e bares. Com isso, percebe-se que a atividade cultural da cidade
+                caracteriza-se por ser um dos pilares da mesma.</mark> <br><br>
+              Das dezenas de milhares de restaurantes da região, diversos caracterizam-se por trazerem, além da
+              alimentação de qualidade, experiências inesquecíveis. <mark>Nesse ramo, com a maior população do
+                continente americano, São Paulo necessita de uma ação, partindo de apaixonados por culinária, para
+                apaixonados por culinária.</mark></p></h2>
+            <br><br>
+            <button class="button" onclick="sobre()">Saiba Mais</button>
+          </div>
+        </div>
+        
+        <div class="container">
+          <div class="caixaDeTexto1">
+            <div class="divlogo"><img src="../Projeto Individual/Imagens/teste.png" style="height: 54vh; width: 26vw"></div>
+            <h1 class="h1parallax2">Por que nós?</h1>
+            <h2 class="h2parallax2">
+            <p>A região metropolitana de SP conta com aproximadamente vinte e dois milhões de habitantes, tornando-se a
+              quarta maior região metropolitana do mundo. Essa população, proveniente de centenas de grupos étnicos,
+              torna a inovação cultural parte do seu dia-a-dia, agregando valores e mesclando suas influências.
+              <mark>Com mais de duzentos museus, centros culturais e galerias, além de cerca de 80 mil espaços para
+                alimentação, como restaurantes e bares. Com isso, percebe-se que a atividade cultural da cidade
+                caracteriza-se por ser um dos pilares da mesma.</mark> <br><br>
+              Das dezenas de milhares de restaurantes da região, diversos caracterizam-se por trazerem, além da
+              alimentação de qualidade, experiências inesquecíveis. <mark>Nesse ramo, com a maior população do
+                continente americano, São Paulo necessita de uma ação, partindo de apaixonados por culinária, para
+                apaixonados por culinária.</mark></p></h2>
+            <br><br>
+            <button class="button" onclick="sobre()">Saiba Mais</button>
+          </div>
+        </div>
+        
+        <div class="container">
+          <div class="caixaDeTexto1">
+            <div class="divlogo"><img src="../Projeto Individual/Imagens/teste.png" style="height: 54vh; width: 26vw"></div>
+            <h1 class="h1parallax2">Por que nós?</h1>
+            <h2 class="h2parallax2">
+            <p>A região metropolitana de SP conta com aproximadamente vinte e dois milhões de habitantes, tornando-se a
+              quarta maior região metropolitana do mundo. Essa população, proveniente de centenas de grupos étnicos,
+              torna a inovação cultural parte do seu dia-a-dia, agregando valores e mesclando suas influências.
+              <mark>Com mais de duzentos museus, centros culturais e galerias, além de cerca de 80 mil espaços para
+                alimentação, como restaurantes e bares. Com isso, percebe-se que a atividade cultural da cidade
+                caracteriza-se por ser um dos pilares da mesma.</mark> <br><br>
+              Das dezenas de milhares de restaurantes da região, diversos caracterizam-se por trazerem, além da
+              alimentação de qualidade, experiências inesquecíveis. <mark>Nesse ramo, com a maior população do
+                continente americano, São Paulo necessita de uma ação, partindo de apaixonados por culinária, para
+                apaixonados por culinária.</mark></p></h2>
+            <br><br>
+            <button class="button" onclick="sobre()">Saiba Mais</button>
+          </div>
+        </div>
+        
+        <div class="container">
+          <div class="caixaDeTexto1">
+            <div class="divlogo"><img src="../Projeto Individual/Imagens/teste.png" style="height: 54vh; width: 26vw"></div>
+            <h1 class="h1parallax2">Por que nós?</h1>
+            <h2 class="h2parallax2">
+            <p>A região metropolitana de SP conta com aproximadamente vinte e dois milhões de habitantes, tornando-se a
+              quarta maior região metropolitana do mundo. Essa população, proveniente de centenas de grupos étnicos,
+              torna a inovação cultural parte do seu dia-a-dia, agregando valores e mesclando suas influências.
+              <mark>Com mais de duzentos museus, centros culturais e galerias, além de cerca de 80 mil espaços para
+                alimentação, como restaurantes e bares. Com isso, percebe-se que a atividade cultural da cidade
+                caracteriza-se por ser um dos pilares da mesma.</mark> <br><br>
+              Das dezenas de milhares de restaurantes da região, diversos caracterizam-se por trazerem, além da
+              alimentação de qualidade, experiências inesquecíveis. <mark>Nesse ramo, com a maior população do
+                continente americano, São Paulo necessita de uma ação, partindo de apaixonados por culinária, para
+                apaixonados por culinária.</mark></p></h2>
+            <br><br>
+            <button class="button" onclick="sobre()">Saiba Mais</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <footer>
+    <div class="caixaDeTexto">
+      <p>MEO - Todos os direitos reservados - 2022</p>
+    </div>
+  </footer>
+  <br>
+
+</body>
+
+</html>
+<script>
+  const abrir = document.getElementById('abrir');
+  const modal_container = document.getElementById('modal_container');
+  const fechar = document.getElementById('fechar');
+
+  function abrirTeste() {
+    console.log(modal_container.classList)
+    modal_container.classList.add("show")
+  }
+
+  function fecharTeste() {
+    console.log(modal_container.classList)
+    modal_container.classList.remove("show")
+  }
+
+  function simulador() {
+    window.location.href = "simulador.html"
+  }
+
+  function sobre() {
+    window.location.href = "cadastro.html"
+  }
+
+  function index() {
+    window.location.href = "index.html"
+  }
+</script>
