@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" type="imagex/png" href="../assets/imagens//uvasensor.png">
-    <title>CADASTRO | Meo</title>
+    <title>LOGIN | Meo</title>
 </head>
 
 <body>
@@ -49,33 +49,22 @@
 
     <div class="wrapper">
         <main>
-            <div class="fundoGradiante">
-                <h1 class="h1parallax4" style="color: white;">CADASTRO | Meo</h1>
-                <div class="divFormulario" id="div_cadastro">
+            <div class="fundoGradiante02">
+                <h1 class="h1parallax4" style="color: white;">LOGIN | Meo</h1>
+                <div class="divFormulario" id="div_cadastro" style="height: 250px;">
                     <p>
-                        <span class="h1parallax3"><mark>Seu nome:</mark></span>
+                        <span class="h1parallax3">Seu E-mail:</span>
                         <br>
-                        <input class="input01" id="in_nome">
+                        <input class="input01" id="in_email">
                     </p>
                     <p>
-                        <span class="h1parallax3"><mark>Seu melhor e-mail:</mark></span>
-                        <br>
-                        <input class="input01" type="email" id="in_email">
-                    </p>
-                    <p>
-                        <span class="h1parallax3"><mark>Senha:</mark></span>
+                        <span class="h1parallax3">Sua Senha:</span>
                         <br>
                         <input class="input01" type="password" id="in_senha">
                     </p>
-                    <p>
-                        <span class="h1parallax3"><mark>1 + 1 = ?</mark></span>
-                        <br>
-                        <input class="input01" type="number" id="in_validacao">
-                    </p>
-                    <p>
-                        <button id="botaocadastro" class="botaoIncolor" onclick="avancar()">Avançar</button>
-                    </p>
+                    <button class="botaoIncolor" onclick="Acesso()">Entrar</button>
                 </div>
+                </h1>
             </div>
         </main>
     </div>
@@ -83,48 +72,16 @@
 </body>
 
 </html>
-
 <script>
+    function Acesso() {
+        var email = i_email.value
+        var Pass = Number(i_senha.value)
 
-    function avancar() {
-        let email = in_email.value;
-        let nome = in_nome.value;
-        let validacao = in_validacao.value;
-        let checkbox = in_checkbox.value;
-
-        if (email == "" || nome == "" || validacao == "") {
-            alert(`Preencha todos os campos para prosseguir!`)
-        } else if (validacao != 2) {
-            alert(`Informe valores válidos!`)
+        if (Email == Email && Pass == Pass) {
+            alert('AUTENTICADO COM SUCESSO!')
+            window.location.href = "../dashboard/dashboard.html";
+        } else {
+            alert('FALHA NA AUTENTICAÇÃO, VERIFICAR E-MAIL E SENHA!')
         }
-
-        fetch("/usuarios/avancar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: email,
-                nomeServer: nome,
-
-            })
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-            if (resposta.ok) {
-
-                function login() {
-                    window.location.href = "login.html"
-
-                }
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
-
-        return false;
     }
-
 </script>

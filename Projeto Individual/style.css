@@ -443,6 +443,15 @@ footer {
   width: 100%;
 }
 
+.fundoGradiante02 {
+  position: absolute;
+  align-items: center;
+  text-align: center;
+  background-image: url("https://visitecentrodesaopaulo.com.br/wp-content/uploads/2019/05/Esther-Rooftop.jpg");
+  height: 100%;
+  width: 100%;
+}
+
 .fundoBranco {
   padding-top: 30px;
   align-items: center;
@@ -465,8 +474,8 @@ footer {
   background-color: #ffffff00;
   border: 1px solid #ffffff;
   border-radius: 30px;
-  height: 350px;
-  width: 400px;
+  height: 45vh;
+  width: 25vw;
   margin-top: 8vh;
   margin-left: 39vw;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -490,9 +499,4 @@ footer {
 .botaoIncolor:hover {
   background-color: #FFF;
   color: #000;
-}
-
-.checkbox{
-  height: 2vh;
-  width: 2vw;
 }

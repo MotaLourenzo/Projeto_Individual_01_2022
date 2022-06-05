@@ -13,6 +13,7 @@
 <body>
 
   <header>
+
     <img src="../assets/imagens//logo.png" style="height: 80px; width: 90px;" class="logo" alt="logo"
         onclick="index()">
     <nav class="menu">
@@ -45,6 +46,7 @@
             </div>
         </div>
     </nav>
+    
 </header>
 
   <div class="wrapper">
@@ -78,17 +80,13 @@
       </section>
     </main>
   </div>
-  <footer>
-    <div class="caixaDeTexto">
-      <p>MEO - Todos os direitos reservados - 2022</p>
-    </div>
-  </footer>
-  <br>
 
 </body>
 
 </html>
+
 <script>
+
   const abrir = document.getElementById('abrir');
   const modal_container = document.getElementById('modal_container');
   const fechar = document.getElementById('fechar');
@@ -103,15 +101,4 @@
     modal_container.classList.remove("show")
   }
 
-  function simulador() {
-    window.location.href = "simulador.html"
-  }
-
-  function sobre() {
-    window.location.href = "cadastro.html"
-  }
-
-  function index() {
-    window.location.href = "index.html"
-  }
 </script>
