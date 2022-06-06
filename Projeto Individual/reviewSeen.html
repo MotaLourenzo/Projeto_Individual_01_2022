@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="imagex/png" href="../assets/imagens//uvasensor.png">
+    <title>REVIEW SEEN | Meo</title>
+</head>
+
+<body>
+
+    <header>
+        <img src="../assets/imagens//logo.png" style="height: 80px; width: 90px;" class="logo" alt="logo"
+            onclick="index()">
+        <nav class="menu">
+            <a href="index.html">Home</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+            <a href="newsletter.html">NewsLetter</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+            <a href="votacao.html">Opiniões</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+            <a href="cadastro.html">Cadastro</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+            <a href="login.html">Login</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+            <a onclick="abrirTeste()" id="abrir">
+                Gastrônomias
+            </a>
+            <div id="modal_container" class="modal_container">
+                <div class="modal">
+                    <p>
+                        <select class="select" id="sel_tipoDeVinho" onchange="location = this.value;">
+                            <option value="culinariaJaponesa.html">Gastrônomia Japonesa</option>
+                            <option value="culinariaMediterranea.html">Gastrônomia Mediterrânea</option>
+                            <option value="culinariaLatina.html">Gastrônomia Latina</option>
+                            <option value="culinariaArabe.html">Gastrônomia Árabe</option>
+                            <option value="culinariaFrancesa.html">Gastrônomia Frâncesa</option>
+                            <option value="culinariaSulAsiatica.html">Gastrônomia Sul-Asiática</option>
+                        </select>
+                    </p>
+                    <button class="button" id="direcionar">
+                        Direcionar
+                    </button>
+                    <button onclick="fecharTeste()" class="button02" id="fechar">
+                        X
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <main>
+            <section class="module parallax imagemHome2">
+                <h1 class="h1parallax1">Reviews</h1>
+                <h2 class="h2parallax">Com tantas opções, especialistas são nescessários.<br><br>Estamos aqui para isto.
+                </h2>
+            </section>
+
+            <section class="module content">
+
+                <div class="container">
+                    <div class="divVetor2"><img src="../Projeto Individual/Imagens/seen.webp"
+                            style="height: 50vh; width: 33vw;">
+                    </div>
+                    <div class="caixaDeTexto2">
+                        <h1 class="h1parallax5">Seen - São Paulo</h1>
+                        <h2 class="h2parallax5">
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ab perspiciatis repellat
+                                eligendi
+                                totam
+                                labore deserunt eaque in minus, facere odio repellendus saepe vel. Expedita debitis at
+                                rerum eius
+                                assumenda.
+                            </p>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ab perspiciatis repellat
+                                eligendi
+                                totam
+                                labore deserunt eaque in minus, facere odio repellendus saepe vel. Expedita debitis at
+                                rerum eius
+                                assumenda.
+                            </p>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ab perspiciatis repellat
+                                eligendi
+                                totam
+                                labore deserunt eaque in minus, facere odio repellendus saepe vel. Expedita debitis at
+                                rerum eius
+                                assumenda.
+                            </p>
+                        </h2>
+                        <h2 class="h2parallax7">
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ab perspiciatis repellat
+                                eligendi
+                                totam
+                                labore deserunt eaque in minus, facere odio repellendus saepe vel. Expedita debitis at
+                                rerum eius
+                                assumenda.
+                            </p>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ab perspiciatis repellat
+                                eligendi
+                                totam
+                                labore deserunt eaque in minus, facere odio repellendus saepe vel. Expedita debitis at
+                                rerum eius
+                                assumenda.
+                            </p>
+                        </h2>
+                        <h2 class="h2parallax6">Alameda Santos, 1437 - Jardim Paulista, São Paulo</h2>
+                        <div class="linhaFina"></div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    const abrir = document.getElementById('abrir');
+    const modal_container = document.getElementById('modal_container');
+    const fechar = document.getElementById('fechar');
+
+    function abrirTeste() {
+        console.log(modal_container.classList)
+        modal_container.classList.add("show")
+    }
+
+    function fecharTeste() {
+        console.log(modal_container.classList)
+        modal_container.classList.remove("show")
+    }
+
+    function reviewSeen() {
+        window.location.href = "reviewSeen.html"
+    }
+
+    function reviewTerraco() {
+        window.location.href = "reviewTerraco.html"
+    }
+
+    function reviewFasano() {
+        window.location.href = "reviewFasano.html"
+    }
+
+    function reviewRyo() {
+        window.location.href = "reviewRyo.html"
+    }
+
+    function reviewArturito() {
+        window.location.href = "reviewArturito.html"
+    }
+
+    function reviewJamile() {
+        window.location.href = "reviewJamile.html"
+    }
+
+    function reviewEsther() {
+        window.location.href = "reviewEsther.html"
+    }
+
+    function reviewVista() {
+        window.location.href = "reviewVista.html"
+    }
+
+</script>

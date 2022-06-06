@@ -327,6 +327,24 @@ section.module.content {
   z-index: 9999;
 }
 
+.h2parallax6 {
+  font-size: 35px;
+  font-family: Raleway;
+  margin-top: 15vh;
+  margin-left: 44vw;
+  color: #000;
+  z-index: 9999;
+}
+
+.h2parallax7 {
+  font-size: 35px;
+  font-family: Raleway;
+  margin-right: 0.5vw;
+  margin-left: -1.8vw;
+  color: #000;
+  z-index: 9999;
+}
+
 section.module.parallax {
   display: flex;
   flex-direction: column;
@@ -411,7 +429,7 @@ section.module.parallax h1 {
 
   .container {
     margin: 0vh 5vw 0vh 5vw;
-    padding: 0;
+    padding: 50px;
   }
 
   section.module.parallax h1 {
@@ -518,8 +536,12 @@ section.module.parallax h1 {
 
 .linhaFina {
   text-decoration: none;
-  margin-top: 25vh;
+  margin-top: 10vh;
   margin-right: 2vw;
   font-family: Raleway;
   border: 1px solid #d2d2d2;
+}
+
+footer{
+  background-color: #00000000;
 }
