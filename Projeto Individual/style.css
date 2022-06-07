@@ -379,6 +379,10 @@ section.module.imagemHome2 {
 }
 
 section.module.imagemHome3 {
+  background-image: url("https://f.i.uol.com.br/hunting/2017/08/14/1502741478599203e629226_1502741478_3x2_rt.jpg");
+}
+
+section.module.imagemHome4 {
   background-image: url("https://images.unsplash.com/photo-1618396478912-c09676962947?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
 }
 
@@ -479,7 +483,7 @@ section.module.parallax h1 {
   position: absolute;
   align-items: center;
   text-align: center;
-  background-image: url("https://visitecentrodesaopaulo.com.br/wp-content/uploads/2019/05/Esther-Rooftop.jpg");
+  background-image: url("https://images.squarespace-cdn.com/content/v1/5dbb555297983b1c8ac4eb82/1575483305618-XIYPV3VS5K5FV3W471P1/RYO_19-MAIO_13327+ig.jpg?format=2500w");
   height: 100%;
   width: 100%;
 }
