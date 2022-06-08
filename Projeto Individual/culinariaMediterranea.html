@@ -2,95 +2,104 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
-    <link href="style02.css" rel="stylesheet">
-    <link rel="shortcut icon" type="imagex/png" href="../Projeto Individual/Imagens/logo.jpg">
-    <title>MEDITERRÂNEA | Meo</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" type="imagex/png" href="../Projeto Individual/Imagens/logo.png">
+  <title>HOME | Meo</title>
 </head>
 
 <body>
 
-    <header>
-        <img src="../Projeto Individual/Imagens/logo.jpg" style="height: 80px; width: 90px;" class="logo" alt="logo"
-            onclick="index()">
-        <nav class="menu">
-            <a href="index.html">Home</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
-            <a href="newsletter.html">NewsLetter</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
-            <a href="votacao.html">Opiniões</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
-            <a href="cadastro.html">Cadastro</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
-            <a href="login.html">Login</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
-            <a href="valores.html">Valores</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
-            <a onclick="abrirTeste()" id="abrir">
-                Gastrônomias
-            </a>
-            <div id="modal_container" class="modal_container">
-                <div class="modal">
-                    <p>
-                        <select class="select" id="sel_tipoDeVinho" onchange="location = this.value;">
-                            <option value="culinariaJaponesa.html">Gastrônomia Japonesa</option>
-                            <option value="culinariaMediterranea.html">Gastrônomia Mediterrânea</option>
-                            <option value="culinariaLatina.html">Gastrônomia Latina</option>
-                            <option value="culinariaArabe.html">Gastrônomia Árabe</option>
-                            <option value="culinariaFrancesa.html">Gastrônomia Frâncesa</option>
-                            <option value="culinariaSulAsiatica.html">Gastrônomia Sul-Asiática</option>
-                        </select>
-                    </p>
-                    <button class="button" id="direcionar">
-                        Direcionar
-                    </button>
-                    <button onclick="fecharTeste()" class="button02" id="fechar">
-                        X
-                    </button>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <section class="sobre">
-        <div class="extras" style="background-color: #206b6288;">
-            <img class="correction" src="../Projeto Individual/Imagens/mediterranea.png">
+  <header>
+    <img src="../Projeto Individual/Imagens/logo.png" style="height: 80px; width: 90px;" class="logo" alt="logo"
+      onclick="index()">
+    <nav class="menu">
+      <a href="index.html">Home</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+      <a href="newsletter.html">NewsLetter</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+      <a href="votacao.html">Opiniões</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+      <a href="cadastro.html">Cadastro</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+      <a href="login.html">Login</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+      <a onclick="abrirTeste()" id="abrir">
+        Gastrônomias
+      </a>
+      <div id="modal_container" class="modal_container">
+        <div class="modal">
+          <p>
+            <select class="select" id="sel_tipoCu" onchange="location = this.value;">
+              <option value="culinariaJaponesa.html">Gastrônomia Japonesa</option>
+              <option value="culinariaMediterranea.html">Gastrônomia Mediterrânea</option>
+              <option value="culinariaLatina.html">Gastrônomia Latina</option>
+              <option value="culinariaArabe.html">Gastrônomia Árabe</option>
+              <option value="culinariaFrancesa.html">Gastrônomia Frâncesa</option>
+              <option value="culinariaSulAsiatica.html">Gastrônomia Sul-Asiática</option>
+            </select>
+          </p>
+          <button class="button" id="direcionar">
+            Direcionar
+          </button>
+          <button onclick="fecharTeste()" class="button02" id="fechar">
+            X
+          </button>
         </div>
-        <div class="centerVinho">
-            <div class="textoVinho">
-                <h1>
-                    <span
-                        style="color: #206b6288; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit?</span><br>
-                </h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit?<mark
-                        class="mark02">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, doloribus iusto, perspiciatis, illum id nisi atque totam velit est odit tenetur deleniti dolorem possimus odio.</mark>
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit?<mark
-                        class="mark02">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, doloribus iusto, perspiciatis, illum id nisi atque totam velit est odit tenetur deleniti dolorem possimus odio.</mark>
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit?<mark
-                        class="mark02">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, doloribus iusto, perspiciatis, illum id nisi atque totam velit est odit tenetur deleniti dolorem possimus odio.</mark>
-                </p>
+      </div>
+    </nav>
+  </header>
 
+  <div class="wrapper">
+    <main>
+      <section class="module parallax imagemHome5">
+        <h1 class="h1parallax">Culinária Mediterrânea</h1>
+        <h2 class="h2parallax">Banhando desde a costa portuguesa, até o sul de Isreal, tal como as praias croátas até a Algéria, a Culinária Mediterrânea é uma das mais amadas e abrângentes do mundo.<br><br>Nós listamos os melhores (representantes).</h2>
+      </section>
+
+      <section class="module content">
+        <div class="container">
+          <div class="caixaDeTexto1">
+            <div class="divVetor"><img src="../Projeto Individual/Imagens/teste.png" style="height: 55vh; width: 25vw">
             </div>
+            <h1 class="h1parallax2">Por que nós?</h1>
+            <h2 class="h2parallax2">
+              <p>A região metropolitana de SP conta com aproximadamente vinte e dois milhões de habitantes, tornando-se
+                a
+                quarta maior região metropolitana do mundo. Essa população, proveniente de centenas de grupos étnicos,
+                torna a inovação cultural parte do seu dia-a-dia, agregando valores e mesclando suas influências.
+                <mark>Com mais de duzentos museus, centros culturais e galerias, além de cerca de 80 mil espaços para
+                  alimentação, como restaurantes e bares. Com isso, percebe-se que a atividade cultural da cidade
+                  caracteriza-se por ser um dos pilares da mesma.</mark> <br><br>
+                Das dezenas de milhares de restaurantes da região, diversos caracterizam-se por trazerem, além da
+                alimentação de qualidade, experiências inesquecíveis. <mark>Nesse ramo, com a maior população do
+                  continente americano, São Paulo necessita de uma ação, partindo de apaixonados por culinária, para
+                  apaixonados por culinária.</mark>
+              </p>
+            </h2>
+            <br><br>
+            <button class="button" onclick="sobre()">Saiba Mais</button>
+          </div>
         </div>
-
-    </section>
+      </section>
+    </main>
+  </div>
 
 </body>
 
 </html>
+
 <script>
-    const abrir = document.getElementById('abrir');
-    const modal_container = document.getElementById('modal_container');
-    const fechar = document.getElementById('fechar');
 
-    function abrirTeste() {
-        console.log(modal_container.classList)
-        modal_container.classList.add("show")
-    }
+  const abrir = document.getElementById('abrir');
+  const modal_container = document.getElementById('modal_container');
+  const fechar = document.getElementById('fechar');
 
-    function fecharTeste() {
-        console.log(modal_container.classList)
-        modal_container.classList.remove("show")
-    }
+  function abrirTeste() {
+    console.log(modal_container.classList)
+    modal_container.classList.add("show")
+  }
+
+  function fecharTeste() {
+    console.log(modal_container.classList)
+    modal_container.classList.remove("show")
+  }
+
 </script>

@@ -180,12 +180,15 @@ mark {
 
 select {
   border-radius: 15px;
-  border: 2px solid white;
+  border: 2px solid #7E7E7E;
   background: no-repeat center right #FFF;
-  border: 1px solid #333;
   font-size: 15px;
   padding-right: 20px;
+  color: #7E7E7E;
+  background-color: #ffffff00;
+  margin-bottom: 30px;
 }
+
 
 .modal_container {
   position: fixed;
@@ -386,6 +389,11 @@ section.module.imagemHome4 {
   background-image: url("https://images.unsplash.com/photo-1618396478912-c09676962947?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
 }
 
+section.module.imagemHome5 {
+  background-image: url("https://media-cdn.tripadvisor.com/media/photo-m/1280/1a/62/66/d2/sala.jpg");
+}
+
+
 section.module.parallax h1 {
   cursor: pointer;
   color: rgb(255, 255, 255);
@@ -484,6 +492,15 @@ section.module.parallax h1 {
   align-items: center;
   text-align: center;
   background-image: url("https://images.squarespace-cdn.com/content/v1/5dbb555297983b1c8ac4eb82/1575483305618-XIYPV3VS5K5FV3W471P1/RYO_19-MAIO_13327+ig.jpg?format=2500w");
+  height: 100%;
+  width: 100%;
+}
+
+.fundoGradiante03 {
+  position: absolute;
+  align-items: center;
+  text-align: center;
+  background-image: url("https://www.imosp.com.br/wp-content/uploads/2020/03/mani-2-scaled.jpg");
   height: 100%;
   width: 100%;
 }
