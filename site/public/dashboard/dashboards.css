@@ -286,9 +286,9 @@ body {
 
 .canvas_grafico {
   background-color: #ededed;
+  margin-top: 650px;
   border-radius: 20px;
   border: 1px solid white;
-  border: #ffee58;
 }
 
 h4{

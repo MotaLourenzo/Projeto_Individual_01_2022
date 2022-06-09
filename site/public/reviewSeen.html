@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" type="imagex/png" href="../Projeto Individual/Imagens/logo.png">
+    <link rel="shortcut icon" type="imagex/png" href="../public/assets/Imagens/logo.png">
     <title>REVIEW SEEN | Meo</title>
 </head>
 
 <body>
 
     <header>
-        <img src="../Projeto Individual/Imagens/logo.png" style="height: 80px; width: 90px;" class="logo" alt="logo"
+        <img src="../public/assets/Imagens/logo.png" style="height: 80px; width: 90px;" class="logo" alt="logo"
             onclick="index()">
         <nav class="menu">
             <a href="index.html">Home</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
@@ -27,14 +27,23 @@
             <div id="modal_container" class="modal_container">
                 <div class="modal">
                     <p>
-                        <select class="select" id="sel_tipoCu" onchange="location = this.value;">
-                            <option value="culinariaJaponesa.html">Gastrônomia Japonesa</option>
-                            <option value="culinariaMediterranea.html">Gastrônomia Mediterrânea</option>
-                            <option value="culinariaLatina.html">Gastrônomia Latina</option>
-                            <option value="culinariaArabe.html">Gastrônomia Árabe</option>
-                            <option value="culinariaFrancesa.html">Gastrônomia Frâncesa</option>
-                            <option value="culinariaSulAsiatica.html">Gastrônomia Sul-Asiática</option>
-                        </select>
+                        <option hidden value="selecione">Selecione</option>
+                        <option value="culinariaJaponesa.html">Gastrônomia Japonesa</option>
+                        <option value="culinariaPortugesa.html">Gastrônomia Portugesa</option>
+                        <option value="culinariaEspanhola.html">Gastrônomia Espanhola</option>
+                        <option value="culinariaFrancesa.html">Gastrônomia Francesa</option>
+                        <option value="culinariaItaliana.html">Gastrônomia Italiana</option>
+                        <option value="culinariaArabe.html">Gastrônomia Árabe</option>
+                        <option value="culinariaBrasileira.html">Gastrônomia Brasileira</option>
+                        <option value="culinariaCoreana.html">Gastrônomia Coreana</option>
+                        <option value="culinariaIndiana.html">Gastrônomia Indiana</option>
+                        <option value="culinariaIsraelense.html">Gastrônomia Israelense</option>
+                        <option value="culinariaIndonesia.html">Gastrônomia Indonésia</option>
+                        <option value="culinariaChinesa.html">Gastrônomia Chinesa</option>
+                        <option value="culinariaMexicana.html">Gastrônomia Mexicana</option>
+                        <option value="culinariaArgentina.html">Gastrônomia Argentina</option>
+                        <option value="culinariaColombiana.html">Gastrônomia Colombiana</option>
+                        <option value="culinariaMarroquina.html">Gastrônomia Marroquina</option>
                     </p>
                     <button class="button" id="direcionar">
                         Direcionar
@@ -58,7 +67,7 @@
             <section class="module content">
 
                 <div class="container">
-                    <div class="divVetor2"><img src="../Projeto Individual/Imagens/seen.webp"
+                    <div class="divVetor2"><img src="../public/assets/Imagens/seen.webp"
                             style="height: 50vh; width: 33vw;">
                     </div>
                     <div class="caixaDeTexto2">
@@ -74,7 +83,8 @@
                             <p>
                                 Experiência incrível com uma vista espetacular de São Paulo.
                                 Um restaurante com um dos melhores atendimentos que já recebi, desde a chegada até a
-                                saída, uma recepção e atendimento acima da media. Aproveite bons momentos em um ambiente para muitas ocasiões, sua reunião de negócios em
+                                saída, uma recepção e atendimento acima da media. Aproveite bons momentos em um ambiente
+                                para muitas ocasiões, sua reunião de negócios em
                                 espaços para grupos, um jantar com uma excelente companhia ou simplesmente em um tempo
                                 para relaxar no bar muito bem frequentado.
                                 visita.
@@ -82,14 +92,16 @@
                         </h2>
                         <h2 class="h2parallax7">
                             <p>
-                                A vista é muito bacana com uma altura que permite enxergar diversas regiões de São
-                                Paulo, principalmente com o clima favorável, mesmo a noite. A qualidade da comida acompanha o padrão do espaço e atendimento que farão sua visita
+                                A vista é única. Com uma altura que permite enxergar diversas regiões de São
+                                Paulo, principalmente com o clima favorável, mesmo a noite. A qualidade da comida
+                                acompanha o padrão do espaço e atendimento que farão sua visita
                                 ser uma experiência fantástica.
                             </p>
                             <p>
                                 O cardápio tem opções variadas em entradas, nos pratos principais, massas, peixes e
                                 carnes, para os amantes da carne como eu, começar com o filé do chef será uma opção sem
-                                arrependimento, mas ainda pode escolher o ancho, cordeiro ou outras. Drinks, sobremesas, carta de vinhos completa, juntam tudo o que você pode buscar em uma visita.
+                                arrependimento, mas ainda pode escolher o ancho, cordeiro ou outras. Drinks, sobremesas,
+                                carta de vinhos completa, juntam tudo o que você pode buscar em uma visita.
                             </p>
                         </h2>
                         <h2 class="h2parallax6">Alameda Santos, 1437 - Jardim Paulista, São Paulo</h2>
@@ -103,6 +115,10 @@
 
     </div>
 
+
+    <footer>
+        <h1>Meo. 2022</h1>
+    </footer>
 </body>
 
 </html>

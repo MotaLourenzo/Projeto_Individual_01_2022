@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" type="imagex/png" href="../Projeto Individual/Imagens/logo.png">
+    <link rel="shortcut icon" type="imagex/png" href="../public/assets/Imagens/logo.png">
     <title>CADASTRO | Meo</title>
 </head>
 
 <body>
 
     <header>
-        <img src="../Projeto Individual/Imagens/logo.png" style="height: 80px; width: 90px;" class="logo" alt="logo"
+        <img src="../public/assets/Imagens/logo.png" style="height: 80px; width: 90px;" class="logo" alt="logo"
             onclick="index()">
         <nav class="menu">
             <a href="index.html">Home</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
@@ -27,13 +27,24 @@
             <div id="modal_container" class="modal_container">
                 <div class="modal">
                     <p>
-                        <select class="select" id="sel_tipoCu" onchange="location = this.value;">
+                        <select class="select" id="sel_tipoGastro" onchange="location = this.value;">
+                            <option hidden value="selecione">Selecione</option>
                             <option value="culinariaJaponesa.html">Gastrônomia Japonesa</option>
-                            <option value="culinariaMediterranea.html">Gastrônomia Mediterrânea</option>
-                            <option value="culinariaLatina.html">Gastrônomia Latina</option>
+                            <option value="culinariaPortugesa.html">Gastrônomia Portugesa</option>
+                            <option value="culinariaEspanhola.html">Gastrônomia Espanhola</option>
+                            <option value="culinariaFrancesa.html">Gastrônomia Francesa</option>
+                            <option value="culinariaItaliana.html">Gastrônomia Italiana</option>
                             <option value="culinariaArabe.html">Gastrônomia Árabe</option>
-                            <option value="culinariaFrancesa.html">Gastrônomia Frâncesa</option>
-                            <option value="culinariaSulAsiatica.html">Gastrônomia Sul-Asiática</option>
+                            <option value="culinariaBrasileira.html">Gastrônomia Brasileira</option>
+                            <option value="culinariaCoreana.html">Gastrônomia Coreana</option>
+                            <option value="culinariaIndiana.html">Gastrônomia Indiana</option>
+                            <option value="culinariaIsraelense.html">Gastrônomia Israelense</option>
+                            <option value="culinariaIndonesia.html">Gastrônomia Indonésia</option>
+                            <option value="culinariaChinesa.html">Gastrônomia Chinesa</option>
+                            <option value="culinariaMexicana.html">Gastrônomia Mexicana</option>
+                            <option value="culinariaArgentina.html">Gastrônomia Argentina</option>
+                            <option value="culinariaColombiana.html">Gastrônomia Colombiana</option>
+                            <option value="culinariaMarroquina.html">Gastrônomia Marroquina</option>
                         </select>
                     </p>
                     <button class="button" id="direcionar">
@@ -73,7 +84,30 @@
                         <input class="input01" type="number" id="in_validacao">
                     </p>
                     <p>
-                        <button id="botaocadastro" class="botaoIncolor" onclick="avancar()">Avançar</button>
+                        <span class="h1parallax3"><mark>Qual é a sua gastrônomia favorita?</mark></span>
+                        <br>
+                        <select class="select" id="Sel_teste">
+                            <option hidden value="selecione">Selecione</option>
+                            <option value="1">Gastrônomia Japonesa</option>
+                            <option value="2">Gastrônomia Portugesa</option>
+                            <option value="3">Gastrônomia Espanhola</option>
+                            <option value="4">Gastrônomia Francesa</option>
+                            <option value="5">Gastrônomia Italiana</option>
+                            <option value="6">Gastrônomia Árabe</option>
+                            <option value="7">Gastrônomia Brasileira</option>
+                            <option value="8">Gastrônomia Coreana</option>
+                            <option value="9">Gastrônomia Indiana</option>
+                            <option value="10">Gastrônomia Israelense</option>
+                            <option value="11">Gastrônomia Indonésia</option>
+                            <option value="12">Gastrônomia Chinesa</option>
+                            <option value="13">Gastrônomia Mexicana</option>
+                            <option value="14">Gastrônomia Argentina</option>
+                            <option value="15">Gastrônomia Colombiana</option>
+                            <option value="16">Gastrônomia Marroquina</option>
+                        </select>
+                    </p>
+                    <p>
+                        <button id="botaocadastro" class="botaoIncolor" onclick="cadastrar()">Avançar</button>
                     </p>
                 </div>
             </div>
@@ -86,27 +120,29 @@
 
 <script>
 
-    function avancar() {
-        let email = in_email.value;
-        let nome = in_nome.value;
-        let validacao = in_validacao.value;
-        let checkbox = in_checkbox.value;
+    function cadastrar() {
+        var nomeVar = in_nome.value;
+        var emailVar = in_email.value;
+        var senhaVar = in_senha.value;
+        var validacaoVar = in_validacao.value;
+        var fkCulinariaVar = Sel_teste.value;
 
-        if (email == "" || nome == "" || validacao == "") {
+        if (nomeVar == "" || emailVar == "" || validacaoVar == "" || senhaVar == "" || fkCulinariaVar == "") {
             alert(`Preencha todos os campos para prosseguir!`)
-        } else if (validacao != 2) {
+        } else if (validacaoVar != 2) {
             alert(`Informe valores válidos!`)
         }
 
-        fetch("/usuarios/avancar", {
+        fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                emailServer: email,
-                nomeServer: nome,
-
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                fkCulinariaServer: fkCulinariaVar
             })
         }).then(function (resposta) {
 

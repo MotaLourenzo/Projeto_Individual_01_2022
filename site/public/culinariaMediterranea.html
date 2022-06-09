@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" type="imagex/png" href="../public/assets/Imagens/logo.png">
+  <title>PORTUGUESA | Meo</title>
+</head>
+
+<body>
+
+  <header>
+    <img src="../public/assets/Imagens/logo.png" style="height: 80px; width: 90px;" class="logo" alt="logo"
+      onclick="index()">
+    <nav class="menu">
+      <a href="index.html">Home</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+      <a href="newsletter.html">NewsLetter</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+      <a href="votacao.html">Opiniões</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+      <a href="cadastro.html">Cadastro</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+      <a href="login.html">Login</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
+      <a onclick="abrirTeste()" id="abrir">
+        Gastrônomias
+      </a>
+      <div id="modal_container" class="modal_container">
+        <div class="modal">
+          <p>
+            <select class="select" id="sel_tipoGastro" onchange="location = this.value;">
+              <option hidden value="selecione">Selecione</option>
+              <option value="culinariaJaponesa.html">Gastrônomia Japonesa</option>
+              <option value="culinariaPortugesa.html">Gastrônomia Portugesa</option>
+              <option value="culinariaEspanhola.html">Gastrônomia Espanhola</option>
+              <option value="culinariaFrancesa.html">Gastrônomia Francesa</option>
+              <option value="culinariaItaliana.html">Gastrônomia Italiana</option>
+              <option value="culinariaArabe.html">Gastrônomia Árabe</option>
+              <option value="culinariaBrasileira.html">Gastrônomia Brasileira</option>
+              <option value="culinariaCoreana.html">Gastrônomia Coreana</option>
+              <option value="culinariaIndiana.html">Gastrônomia Indiana</option>
+              <option value="culinariaIsraelense.html">Gastrônomia Israelense</option>
+              <option value="culinariaIndonesia.html">Gastrônomia Indonésia</option>
+              <option value="culinariaChinesa.html">Gastrônomia Chinesa</option>
+              <option value="culinariaMexicana.html">Gastrônomia Mexicana</option>
+              <option value="culinariaArgentina.html">Gastrônomia Argentina</option>
+              <option value="culinariaColombiana.html">Gastrônomia Colombiana</option>
+              <option value="culinariaMarroquina.html">Gastrônomia Marroquina</option>
+            </select>
+          </p>
+          <button class="button" id="direcionar">
+            Direcionar
+          </button>
+          <button onclick="fecharTeste()" class="button02" id="fechar">
+            X
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="wrapper">
+    <main>
+      <section class="module parallax imagemHome5">
+        <h1 class="h1parallax">Culinária Portuguesa</h1>
+        <h2 class="h2parallax">Banhano pelo Mediterrâneo ao sul e o Atlântico ao oeste, a culinaria lusitana recebeu
+          influência de todos os povos que por aí passaram, tal como pelos lugares por onde seu povo navegou.<br><br>Sua culinária é tão densa, quanto sua história e cultura.</h2>
+      </section>
+
+      <section class="module content">
+        <div class="container">
+          <div class="caixaDeTexto1">
+          </div>
+          <h1 class="h1parallax2">Culinária Portuguesa</h1>
+          <h2 class="h2parallax2">
+            <p>Como o nome já indica, a culinária Portuguesa surge entre os países que são banhados pelo mar do
+              mediterrâneo. Uma região que abrange os continentes europeu, asiático e africano. Esse tipo de
+              gastronomia tem pratos que possuem mais de três mil anos de história.
+              <br>
+              Por isso, desde 2013, a cozinha do mediterrâneo é reconhecida pela Organização das Nações Unidas para a
+              Educação, a Ciência e a Cultura (Unesco) como Patrimônio Imaterial da Humanidade. Ou seja, o que a gente
+              vê no prato é uma rica combinação gastronômica, histórica e cultural. Sua origem é disputada entre
+              vários países que fazem parte dessa região, mostrando o quanto é importante
+              para a construção da identidade e da cultura dos povos que vivem ali.
+              <br>
+              Frutas, legumes e verduras são geralmente de origem orgânica e respeitam a colheita de cada estação.
+              Tudo isso torna essa dieta uma excelente opção para quem deseja mais saúde e bem-estar por meio da
+              alimentação.
+            </p>
+          </h2>
+          <br><br>
+          <button class="button" onclick="sobre()">Saiba Mais</button>
+        </div>
+  </div>
+  </section>
+  </main>
+  </div>
+
+  <footer>
+    <h1>Meo. 2022</h1>
+  </footer>
+
+</body>
+
+</html>
+
+<script>
+
+  const abrir = document.getElementById('abrir');
+  const modal_container = document.getElementById('modal_container');
+  const fechar = document.getElementById('fechar');
+
+  function abrirTeste() {
+    console.log(modal_container.classList)
+    modal_container.classList.add("show")
+  }
+
+  function fecharTeste() {
+    console.log(modal_container.classList)
+    modal_container.classList.remove("show")
+  }
+
+</script>

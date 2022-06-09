@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" type="imagex/png" href="../Projeto Individual/Imagens/logo.png">
-    <title>LOGIN | Meo</title>
+    <link rel="shortcut icon" type="imagex/png" href="../public/assets/Imagens/logo.png">
+    <title>VOTAÇÃO | Meo</title>
 </head>
 
 <body>
 
     <header>
-        <img src="../Projeto Individual/Imagens/logo.png" style="height: 80px; width: 90px;" class="logo" alt="logo"
-            onclick="index()">
+        <img src="../public/assets/Imagens/logo.png" style="height: 80px; width: 90px;" class="logo" alt="logo"
+        onclick="index()">
         <nav class="menu">
             <a href="index.html">Home</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
             <a href="newsletter.html">NewsLetter</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
@@ -49,20 +49,28 @@
 
     <div class="wrapper">
         <main>
-            <div class="fundoGradiante02">
-                <h1 class="h1parallax4" style="color: white;">LOGIN | Meo</h1>
+            <div class="fundoGradiante03">
+                <h1 class="h1parallax4" style="color: white;">VOTAÇÃO | Meo</h1>
                 <div class="divFormulario" id="div_cadastro" style="height: 20vh;">
                     <p>
-                        <span class="h1parallax3"><mark>Seu E-mail:</mark></span>
+                        <span class="h1parallax3"><mark>Qual é a sua gastrônomia favorita?</mark></span>
                         <br>
-                        <input class="input01" id="in_email">
+                        <select class="select" id="sel_tipoCu">
+                            <option value="selecione">Selecione</option>
+                            <option value="culinariaJaponesa.html">Gastrônomia Japonesa</option>
+                            <option value="culinariaMediterranea.html">Gastrônomia Mediterrânea</option>
+                            <option value="culinariaLatina.html">Gastrônomia Latina</option>
+                            <option value="culinariaArabe.html">Gastrônomia Árabe</option>
+                            <option value="culinariaFrancesa.html">Gastrônomia Frâncesa</option>
+                            <option value="culinariaSulAsiatica.html">Gastrônomia Sul-Asiática</option>
+                        </select>
                     </p>
                     <p>
-                        <span class="h1parallax3"><mark>Sua Senha:</mark></span>
+                        <span class="h1parallax3"><mark>Qual é o seu restaurante favorito?</mark></span>
                         <br>
-                        <input class="input01" type="password" id="in_senha">
+                        <input class="input01" type="password" id="in_restauranteFav">
                     </p>
-                    <button class="botaoIncolor" onclick="Acesso()">Entrar</button>
+                    <button class="botaoIncolor" onclick="votar()">Votar</button>
                 </div>
                 </h1>
             </div>
@@ -73,17 +81,42 @@
 
 </html>
 <script>
-    
-    function Acesso() {
-        var email = i_email.value
-        var Pass = Number(i_senha.value)
 
-        if (Email == Email && Pass == Pass) {
-            alert('AUTENTICADO COM SUCESSO!')
-            window.location.href = "../dashboard/dashboard.html";
-        } else {
-            alert('FALHA NA AUTENTICAÇÃO, VERIFICAR E-MAIL E SENHA!')
+    function Votar() {
+        var tipo = sel_tipoCu.value
+        var restaurante = in_restauranteFav.value
+
+        if (tipo == "selecione" || restaurante == "") {
+            alert(`Preencha todos os campos para prosseguir!`)
         }
+
+        fetch("/usuarios/avancar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                tipoServer: tipo,
+                restauranteServer: restaurante,
+
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+            if (resposta.ok) {
+
+                function login() {
+                    window.location.href = "../dashboard/dashboard.html"
+
+                }
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
     }
 
     const abrir = document.getElementById('abrir');

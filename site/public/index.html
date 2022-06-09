@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css" />
-  <link rel="shortcut icon" type="imagex/png" href="../Projeto Individual/Imagens/logo.png">
+  <link rel="shortcut icon" type="imagex/png" href="../public/assets/Imagens/logo.png">
   <title>HOME | Meo</title>
 </head>
 
 <body>
 
   <header>
-    <img src="../Projeto Individual/Imagens/logo.png" style="height: 80px; width: 90px;" class="logo" alt="logo"
+    <img src="../public/assets/Imagens/logo.png" style="height: 80px; width: 90px;" class="logo" alt="logo"
       onclick="index()">
     <nav class="menu">
       <a href="index.html">Home</a>&nbsp;&nbsp;<span class="spana">|</span>&nbsp;&nbsp;
@@ -27,14 +27,23 @@
       <div id="modal_container" class="modal_container">
         <div class="modal">
           <p>
-            <select class="select" id="sel_tipoCu" onchange="location = this.value;">
-              <option value="culinariaJaponesa.html">Gastrônomia Japonesa</option>
-              <option value="culinariaMediterranea.html">Gastrônomia Mediterrânea</option>
-              <option value="culinariaLatina.html">Gastrônomia Latina</option>
-              <option value="culinariaArabe.html">Gastrônomia Árabe</option>
-              <option value="culinariaFrancesa.html">Gastrônomia Frâncesa</option>
-              <option value="culinariaSulAsiatica.html">Gastrônomia Sul-Asiática</option>
-            </select>
+            <option hidden value="selecione">Selecione</option>
+            <option value="culinariaJaponesa.html">Gastrônomia Japonesa</option>
+            <option value="culinariaPortugesa.html">Gastrônomia Portugesa</option>
+            <option value="culinariaEspanhola.html">Gastrônomia Espanhola</option>
+            <option value="culinariaFrancesa.html">Gastrônomia Francesa</option>
+            <option value="culinariaItaliana.html">Gastrônomia Italiana</option>
+            <option value="culinariaArabe.html">Gastrônomia Árabe</option>
+            <option value="culinariaBrasileira.html">Gastrônomia Brasileira</option>
+            <option value="culinariaCoreana.html">Gastrônomia Coreana</option>
+            <option value="culinariaIndiana.html">Gastrônomia Indiana</option>
+            <option value="culinariaIsraelense.html">Gastrônomia Israelense</option>
+            <option value="culinariaIndonesia.html">Gastrônomia Indonésia</option>
+            <option value="culinariaChinesa.html">Gastrônomia Chinesa</option>
+            <option value="culinariaMexicana.html">Gastrônomia Mexicana</option>
+            <option value="culinariaArgentina.html">Gastrônomia Argentina</option>
+            <option value="culinariaColombiana.html">Gastrônomia Colombiana</option>
+            <option value="culinariaMarroquina.html">Gastrônomia Marroquina</option>
           </p>
           <button class="button" id="direcionar">
             Direcionar
@@ -58,7 +67,7 @@
       <section class="module content">
         <div class="container">
           <div class="caixaDeTexto1">
-            <div class="divVetor"><img src="../Projeto Individual/Imagens/teste.png" style="height: 55vh; width: 25vw">
+            <div class="divVetor"><img src="../public/assets/Imagens/teste.png" style="height: 55vh; width: 25vw">
             </div>
             <h1 class="h1parallax2">Por que nós?</h1>
             <h2 class="h2parallax2">
@@ -82,6 +91,10 @@
       </section>
     </main>
   </div>
+
+  <footer>
+    <h1>Meo. 2022</h1>
+  </footer>
 
 </body>
 
