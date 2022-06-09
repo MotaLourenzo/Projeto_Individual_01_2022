@@ -98,19 +98,21 @@ function cadastrar(req, res) {
 
 function votar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var votar = req.body.escolhaServer;
-    var email = req.body.emailServer;
+    let idUsuario = req.body.idUsuarioServer;
+    let fkCulinaria = req.body.fkCulinariaServer;
 
+    console.log(idUsuario);
+    console.log(fkCulinaria);
     
     // Faça as validações dos valores
-    if (votar == undefined) {
+    if (idUsuario == undefined) {
         res.status(400).send("Seu voto está undefined!");
-    } else if (email == undefined) {
+    } else if (fkCulinaria == undefined) {
         res.status(400).send("Seu email está undefined!");
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.votar(votar, email)
+        usuarioModel.votar(fkCulinaria, idUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -128,10 +130,25 @@ function votar(req, res) {
     }
 }
 
+function pegarDadosGrafico(req, res)
+{
+            usuarioModel.pegarDadosGrafico()
+                .then((resposta) =>{
+                    console.log(resposta);
+                    res.json(resposta);
+                })
+                .catch((erro) =>{
+                    console.log('Erro ao pegar os dados do gráfico');
+                    res.status(500).send(erro.sqlMessage);
+                })
+}
+
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
     testar,
-    votar
+    votar,
+    pegarDadosGrafico
 }

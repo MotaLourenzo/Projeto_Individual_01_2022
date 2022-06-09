@@ -16,12 +16,18 @@ router.post("/cadastrar", function (req, res) {
     usuarioController.cadastrar(req, res);
 })
 
-router.post("/autenticar", function (req, res) {
+router.post("/logar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
 router.post("/votar", function (req, res) {
     usuarioController.votar(req, res);
 })
+
+router.get("/dados-grafico", (req, res) => {
+    usuarioController.pegarDadosGrafico(req, res);
+})
+
+
 
 module.exports = router;

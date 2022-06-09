@@ -18,7 +18,7 @@
     <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
 </head>
 
-<body onload="validarSessao(), atualizarFeed()">
+<body onload="pegarDadosGrafico()">
 
     <div class="janela">
         <div class="header-left">
@@ -55,7 +55,7 @@
             <div class="graph">
                 <br>
                 <br>
-                <canvas id="canvas_grafico" class="canvas_grafico"></canvas>
+                <canvas id="myChart" class="canvas_grafico"></canvas>
             </div>
         </div>
     </div>
@@ -65,224 +65,115 @@
 
 <script>
 
-    let proximaAtualizacao;
+const ctx = document.getElementById('myChart').getContext("2d");
 
-    window.onload = obterDadosGrafico(1);
+let labels = [];
+let dados = [];
+
+    
+
+const data = {
+    labels,
+    datasets: [{
+        data: dados,
+        label: '',
+        fill: true,
+        backgroundColor: [
+        'rgba(153, 102, 255, 0.2)'
+        ],
+        borderColor: [
+            '#6d7bf9',
+          ],
+          borderWidth: 1 
+    }]
+};
 
 
-    function atualizacaoPeriodica() {
-        obterdados(1);
-        // obterdados(2);
-        // obterdados(3);
-        // obterdados(4);
+let config = {
+    type: 'bar',
+    data,
+    options: {
+        responsive: true,
+        scales: {
+            yAxes: [{
+            	ticks: {
+                	beginAtZero: true,
+                    stepSize: 5,
+                    max:100
+            	}
+        	}],
+            y : {
+                ticks: {
+                    callback: function(value)
+                        {
+                            let finalValue = value
+                            let checkbox = document.getElementById('checkbox_porcentagem').checked 
 
+                            if(checkbox)
+                                return finalValue + '%';
+                            else
+                                return finalValue + ' livros';
 
-        // setInterval(() => {
-        //     sendData();
-        // }, 2000);
-        setTimeout(atualizacaoPeriodica, 5000);
-    }
-
-    function obterdados() {
-        fetch(`/medidas/tempo-real/`)
-            .then(resposta => {
-
-                if (resposta.ok) {
-                    resposta.json().then(resposta => {
-
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-/*                         var dados = {
-                            temperatura: resposta[0].temperatura,
                         }
-
-                        console.log("\nTEMPERATURA ESTÁ EM::\n\n\n\n\n\n\n\n ", resposta[0].REGISTRO_TEMP);
-
-                        alertar(Number(resposta[0].REGISTRO_TEMP, idAquario)); */
-                    });
-                } else {
-
-                    console.error('Nenhum dado encontrado ou erro na API');
                 }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
-            });
-
+            }            
+    	},
+        
     }
+};
 
-    //verificar_autenticacao();
 
-    // altere aqui como os dados serão exibidos
-    // e como são recuperados do BackEnd
-    function obterDadosGrafico() {
-        if (proximaAtualizacao != undefined) {
-            clearTimeout(proximaAtualizacao);
+const myChart = new Chart(ctx, config);
+
+const pegarDadosGrafico = () => {
+    
+
+    let idUsuario = sessionStorage.ID_USUARIO;
+
+    fetch('/usuarios/dados-grafico',{
+        method: 'GET',
+        headers: {
+            'Content-Type':'application/json'
         }
-
-        fetch(`/medidas/ultimas`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    resposta.reverse();
-                    plotarGrafico(resposta);
-
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
+    })
+        .then((resposta) =>{
+            console.log(resposta)
+            if(resposta.ok)
+            {
+                resposta.json()
+                    .then(json =>{
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        plotarGrafico(json);
+                    })
+                    .catch((erro) =>{
+                        console.log(erro);
+                    })
+                    
             }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            });
+})
 
+}
 
-    }
-
-    // só altere aqui se souber o que está fazendo!
-    function plotarGrafico(resposta, idRegistros) {
-        console.log('iniciando plotagem do gráfico...');
-
-        var dados = {
-            labels: [],
-            datasets: [
-                {
-                    yAxisID: 'japonesa',
-                    label: 'Japonesa',
-                    borderColor: '#8646c5',
-                    backgroundColor: '#8646c5c8',
-                    fill: true,
-                    data: []
-                },
-                {
-                    yAxisID: 'Francesa',
-                    label: 'Francesa',
-                    borderColor: '#d3a016',
-                    backgroundColor: '#d3a016c8',
-                    fill: true,
-                    data: []
-                }
-            ]
-        };
-
-
-        for (i = 0; i < resposta.length; i++) {
-            var registro = resposta[i];
-            dados.labels.push(registro.momento_grafico);
-            dados.datasets[0].data.push(registro.REGISTRO_UMID);
+const plotarGrafico = (json) => 
+{
+    labels.length = 0;
+    dados.length = 0;
+        
+        config.options.y = {"max": json[json.length-1].contagem};
+        for(let i = 0; i < json.length; i++)
+        {
+            let registro = json[i]
+        
+            labels.push(registro.coluna);
+            dados.push(registro.contagem);
         }
+    
+    myChart.update()
+}
 
-        console.log(JSON.stringify(dados));
 
-        var ctx = canvas_grafico.getContext('2d');
-        window.grafico_linha = Chart.Line(ctx, {
-         
-            data: dados,
-            //Configurações do gráfico
-            options: {
-                responsive: true,
-                animation: { duration: 500 },
-                hoverMode: 'index',
-                stacked: false,
-                title: {
-                    display: true,
-                    text: 'Gastrpnomias mais apreciadas pelos frequentadores da grande São Paulo'
-                },
-                scales: {
-                    yAxes: [{
-                        type: 'bar',
-                        display: true,
-                        position: 'left',
-                        id: 'japonesa',
-                        ticks: {
-                            beginAtZero: true,
-                            max: 10000,
-                            min: 0
-                        }
-                    }, 
-                    //Parte para por um for() para adicionar novas culinárias. Talvez um vetor para isso?
-                    {
-                        type: 'bar',
-                        display: false,
-                        position: 'right',
-                        id: 'francesa',
-                        ticks: {
-                            beginAtZero: true,
-                            max: 10000,
-                            min: 0
-                        },
 
-                        gridLines: {
-                            drawOnChartArea: false,
-                        },
-                    }, {
-                        type: 'bar',
-                        display: false,
-                        position: 'right',
-                        id: 'mediterranea',
-                        ticks: {
-                            beginAtZero: true,
-                            max: 10000,
-                            min: 0
-                        },
 
-                        gridLines: {
-                            drawOnChartArea: false,
-                        },
-                    }, {
-                        type: 'bar',
-                        display: false,
-                        position: 'right',
-                        id: 'sulamericana',
-                        ticks: {
-                            beginAtZero: true,
-                            max: 10000,
-                            min: 0
-                        },
 
-                        gridLines: {
-                            drawOnChartArea: false,
-                        },
-                    }],
-                }
-            }
-        });
-
-        //Atualiza os dados de 5 em 5 segundos
-        setTimeout(() => atualizarGrafico(idRegistros, dados), 2000);
-    }
-
-    // só mexer se quiser alterar o tempo de atualização
-    // ou se souber o que está fazendo!
-    function atualizarGrafico(idRegistros, dados) {
-
-        fetch(`/medidas/tempo-real/${idRegistros}`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (novoRegistro) {
-
-                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-                    console.log(`Dados atuais do gráfico: ${dados}`);
-
-                    // tirando e colocando valores no gráfico
-                    dados.labels.shift(); // apagar o primeiro
-                    dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
-                    dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                    dados.datasets[0].data.push(novoRegistro[0].REGISTRO_UMID); // incluir uma nova medida de umidade
-                    dados.datasets[1].data.shift();  // apagar o primeiro de umidade
-                    dados.datasets[1].data.push(novoRegistro[0].REGISTRO_TEMP); // incluir uma nova medida de umidade
-                    window.grafico_linha.update();
-
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idRegistros, dados), 2000);
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(idRegistros, dados), 2000);
-            }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            });
-    }
-
-    atualizacaoPeriodica()
 </script>

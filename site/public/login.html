@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" type="imagex/png" href="../public/assets/Imagens/logo.png">
+    <script src="./js/funcoes.js"></script>
     <title>LOGIN | Meo</title>
 </head>
 
@@ -71,7 +72,7 @@
                         <br>
                         <input class="input01" type="password" id="in_senha">
                     </p>
-                    <button class="botaoIncolor" onclick="Acesso()">Entrar</button>
+                    <button class="botaoIncolor" onclick="logar()">Entrar</button>
                 </div>
                 </h1>
             </div>
@@ -83,18 +84,6 @@
 </html>
 <script>
     
-    function Acesso() {
-        var email = in_email.value
-        var pass = in_senha.value
-
-        if (email == email && pass == pass) {
-            alert('AUTENTICADO COM SUCESSO!')
-            window.location.href = "dashboard/dashboard.html";
-        } else {
-            alert('FALHA NA AUTENTICAÇÃO, VERIFICAR E-MAIL E SENHA!')
-        }
-    }
-
     const abrir = document.getElementById('abrir');
     const modal_container = document.getElementById('modal_container');
     const fechar = document.getElementById('fechar');
