@@ -29,5 +29,4 @@ router.get("/dados-grafico", (req, res) => {
 })
 
 
-
 module.exports = router;
