@@ -65,7 +65,6 @@ function cadastrar(req, res) {
     var nome = req.body.nomeServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
-    var fkCulinaria = req.body.fkCulinariaServer;
 
     
     // Faça as validações dos valores
@@ -75,12 +74,10 @@ function cadastrar(req, res) {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
-    } else if (fkCulinaria == undefined) {
-        res.status(400).send("Sua votação não foi definida!");
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, fkCulinaria)
+        usuarioModel.cadastrar(nome, email, senha)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -101,7 +98,7 @@ function cadastrar(req, res) {
 
 function votar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var votar = req.body.votarServer;
+    var votar = req.body.escolhaServer;
     var email = req.body.emailServer;
 
     

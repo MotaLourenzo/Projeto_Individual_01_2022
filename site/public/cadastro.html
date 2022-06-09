@@ -84,29 +84,6 @@
                         <input class="input01" type="number" id="in_validacao">
                     </p>
                     <p>
-                        <span class="h1parallax3"><mark>Qual é a sua gastrônomia favorita?</mark></span>
-                        <br>
-                        <select class="select" id="Sel_teste">
-                            <option hidden value="selecione">Selecione</option>
-                            <option value="1">Gastrônomia Japonesa</option>
-                            <option value="2">Gastrônomia Portugesa</option>
-                            <option value="3">Gastrônomia Espanhola</option>
-                            <option value="4">Gastrônomia Francesa</option>
-                            <option value="5">Gastrônomia Italiana</option>
-                            <option value="6">Gastrônomia Árabe</option>
-                            <option value="7">Gastrônomia Brasileira</option>
-                            <option value="8">Gastrônomia Coreana</option>
-                            <option value="9">Gastrônomia Indiana</option>
-                            <option value="10">Gastrônomia Israelense</option>
-                            <option value="11">Gastrônomia Indonésia</option>
-                            <option value="12">Gastrônomia Chinesa</option>
-                            <option value="13">Gastrônomia Mexicana</option>
-                            <option value="14">Gastrônomia Argentina</option>
-                            <option value="15">Gastrônomia Colombiana</option>
-                            <option value="16">Gastrônomia Marroquina</option>
-                        </select>
-                    </p>
-                    <p>
                         <button id="botaocadastro" class="botaoIncolor" onclick="cadastrar()">Avançar</button>
                     </p>
                 </div>
@@ -125,12 +102,21 @@
         var emailVar = in_email.value;
         var senhaVar = in_senha.value;
         var validacaoVar = in_validacao.value;
-        var fkCulinariaVar = Sel_teste.value;
 
-        if (nomeVar == "" || emailVar == "" || validacaoVar == "" || senhaVar == "" || fkCulinariaVar == "") {
-            alert(`Preencha todos os campos para prosseguir!`)
+        if (nomeVar == "" || emailVar == "" || validacaoVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+
+            finalizarAguardar();
+            return false;
         } else if (validacaoVar != 2) {
-            alert(`Informe valores válidos!`)
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+
+            finalizarAguardar();
+            return false;
         }
 
         fetch("/usuarios/cadastrar", {
@@ -141,27 +127,30 @@
             body: JSON.stringify({
                 nomeServer: nomeVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar,
-                fkCulinariaServer: fkCulinariaVar
+                senhaServer: senhaVar
             })
         }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
             if (resposta.ok) {
 
-                function login() {
-                    window.location.href = "login.html"
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
 
-                }
+                limparFormulario();
+                finalizarAguardar();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
         });
 
         return false;
     }
+
 
     const abrir = document.getElementById('abrir');
     const modal_container = document.getElementById('modal_container');

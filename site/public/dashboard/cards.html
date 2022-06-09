@@ -23,7 +23,6 @@
 
     <div class="janela">
 
-
         <div class="header-left">
 
             <a href="../public/index.html">
@@ -181,7 +180,30 @@
 
     <div class="votos">
 
-        <h2>Dentre essas, qual é a sua gastrônomia favorita?</h2> <br> <input type="text" id="in_votar">
+        <h2>Dentre essas, qual é a sua gastrônomia favorita?</h2> <br> 
+        <p>
+            <span class="h1parallax3"><mark>Qual é a sua gastrônomia favorita?</mark></span>
+            <br>
+            <select class="select" id="sel_votar">
+                <option hidden value="selecione">Selecione</option>
+                <option value="1">Gastrônomia Japonesa</option>
+                <option value="2">Gastrônomia Portugesa</option>
+                <option value="3">Gastrônomia Espanhola</option>
+                <option value="4">Gastrônomia Francesa</option>
+                <option value="5">Gastrônomia Italiana</option>
+                <option value="6">Gastrônomia Árabe</option>
+                <option value="7">Gastrônomia Brasileira</option>
+                <option value="8">Gastrônomia Coreana</option>
+                <option value="9">Gastrônomia Indiana</option>
+                <option value="10">Gastrônomia Israelense</option>
+                <option value="11">Gastrônomia Indonésia</option>
+                <option value="12">Gastrônomia Chinesa</option>
+                <option value="13">Gastrônomia Mexicana</option>
+                <option value="14">Gastrônomia Argentina</option>
+                <option value="15">Gastrônomia Colombiana</option>
+                <option value="16">Gastrônomia Marroquina</option>
+            </select>
+        </p>
         <br>
         <button class="btn" onclick="votar()">Votar</button>
     </div>
@@ -196,12 +218,10 @@
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
-        var escolhaVar = in_votar.value;
+        var escolhaVar = sel_votar.value;
         var emailVar = sessionStorage.EMAIL_USUARIO;
 
-        if (escolhaVar == undefined) {
-            alert('Preencha todos os campos')
-        } else {
+
             // Enviando o valor da nova input
             fetch("/usuarios/votar", {
                 method: "POST",
@@ -225,7 +245,6 @@
             return false;
         }
 
-    }
 
     function atualizacaoPeriodica() {
         obterdados(1);
@@ -268,6 +287,60 @@
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados`);
             });
+
+    }
+
+    
+    function alertar(culinaria) {
+        var limites = {
+            muito_quente: 23,
+            quente: 22,
+            ideal: 20,
+            frio: 10,
+            muito_frio: 5
+        };
+
+        var classe_temperatura = 'cor-alerta';
+
+        if (temperatura >= limites.muito_quente) {
+            classe_temperatura = 'cor-alerta perigo-quente';
+            console.log("caiu no 1")
+        }
+        else if (temperatura < limites.muito_quente && temperatura >= limites.quente) {
+            classe_temperatura = 'cor-alerta alerta-quente';
+            console.log("caiu no 2")
+        }
+        else if (temperatura < limites.quente && temperatura > limites.frio) {
+            classe_temperatura = 'cor-alerta ideal';
+            console.log("caiu no 3")
+        }
+        else if (temperatura <= limites.frio && temperatura > limites.muito_frio) {
+            classe_temperatura = 'cor-alerta alerta-frio';
+            console.log("caiu no 4")
+        }
+        else if (temperatura < limites.min_temperatura) {
+            classe_temperatura = 'cor-alerta perigo-frio';
+            console.log("caiu no 5")
+        }
+
+        var card;
+
+        if (idAquario == 1) {
+            temp_aquario_1.innerHTML = temperatura + "°C";
+            card = card_1
+        } else if (idAquario == 2) {
+            temp_aquario_2.innerHTML = temperatura + "°C";
+            card = card_2
+        } else if (idAquario == 3) {
+            temp_aquario_3.innerHTML = temperatura + "°C";
+            card = card_3
+        } else if (idAquario == 4) {
+            temp_aquario_4.innerHTML = temperatura + "°C";
+            card = card_4
+        }
+
+        // alterando
+        card.className = classe_temperatura;
 
     }
 
